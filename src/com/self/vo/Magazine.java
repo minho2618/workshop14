@@ -1,6 +1,6 @@
 package com.self.vo;
 
-import com.self.util.PublishDate;
+import com.self.util.MyDate;
 
 public class Magazine extends Book{
 	
@@ -18,21 +18,21 @@ public class Magazine extends Book{
 	 	매거진의 월만 검색하면 연도를 올해랑 비교해서 올해 것만 나오도록 하기.
 	 */
 	
-	private PublishDate date;
+	private MyDate date;
 	private int publishingYear;
 	private int publishingMonth;
 	
 	public Magazine(int isbn, String title, String author, String publisher, double price
-					, PublishDate date) {
+					, MyDate date) {
 		super(isbn, title, author, publisher, price);
 		this.date = date;
 	}
 	
-	public PublishDate getPublishDate() {
+	public MyDate getPublishDate() {
 		return date;
 	}
 	
-	public void changePublishDate(PublishDate date) {
+	public void changePublishDate(MyDate date) {
 		this.date = date;
 	}
 	
