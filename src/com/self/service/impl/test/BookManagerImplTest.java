@@ -118,20 +118,6 @@ public class BookManagerImplTest {
 		}
 		
 		System.out.println();
-
-//		// 10. 제목을 가지고 해당 책의 카테고리를 반환
-//		System.out.println("==== 제목을 가지고 해당 책의 카테고리를 반환 : 듄 ====");
-//		System.out.println(service.checkBookCategory("듄"));
-//		
-//		System.out.println();
-//
-//		// 11. 장르에 해당하는 책들을 반환
-//		System.out.println("==== 장르에 해당하는 책들을 반환 : 미스터리 ====");				
-//		for (Book b : service.searchNovelByGenre("미스터리")) {
-//			System.out.println(b);
-//		}
-//		
-//		System.out.println();
 	}
 
 }
