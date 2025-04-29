@@ -22,9 +22,7 @@ public class BookManagerImplTest {
 		service.insertBook(new Novel(222, "로맨스 대표작", "바쿠", "GoodPublisher", 12000.0, "로맨스"));
 		service.insertBook(new Novel(999, "쿠로미인생", "쿠로미", "GoodPublisher", 22000.0, "코믹"));
 		service.insertBook(new Novel(888, "부탁해! 마이멜로디", "시나모롤", "GoodPublisher", 29000.0, "스릴러"));
-		service.insertBook(new Novel(666, "포챠코시나모롤", "포챠코", "BadPublisher", 19000.0, "액션"));
-		
-		
+		service.insertBook(new Novel(666, "포챠코시나모롤", "포챠코", "TestPblisher", 19000.0, "액션"));
 		
 		// 1. 책 추가 및 전체 검색
 		System.out.println("==== 책 추가 및 전체 검색 ====");
