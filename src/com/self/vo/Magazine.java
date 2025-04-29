@@ -55,7 +55,7 @@ public class Magazine extends Book{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString() + "Magazine [출판 날짜=" + date + "]";
+		return super.toString() + "Magazine [출판 날짜=" + date.toString() + "]";
 	}
 	
 	

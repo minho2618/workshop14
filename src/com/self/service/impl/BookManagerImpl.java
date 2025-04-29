@@ -1,6 +1,7 @@
 package com.self.service.impl;
 
 import java.security.PublicKey;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -10,8 +11,8 @@ import com.self.vo.Magazine;
 
 public class BookManagerImpl implements BookManager {
 	
-	ArrayList<java.awt.print.Book> books = null;
-	public static final MAX_SIZE = 100;
+	ArrayList<Book> books = null;
+	public static final int MAX_SIZE = 100;
 
 	private static BookManagerImpl service = new BookManagerImpl();
 
@@ -30,7 +31,7 @@ public class BookManagerImpl implements BookManager {
 			System.out.println("더이상 책을 등록할 수 없습니다");
 		} else {
 			books.add(book);
-			System.out.println(book.title+"이 등록되었습니다 ");
+			System.out.println(book.getTitle() +"이 등록되었습니다 ");
 		}
 	}
 
@@ -59,8 +60,7 @@ public class BookManagerImpl implements BookManager {
 	public Book getBook(int isbn) {
 		for(int i=0; i<books.size(); i++) {
 			if(books.get(i).getIsbn() == isbn) {
-				return books.get(i); 
-				break;
+				return books.get(i);
 			}
 		}
 		return null;
@@ -68,14 +68,7 @@ public class BookManagerImpl implements BookManager {
 
 	//test 필요 
 	@Override
-	public ArrayList<Book> getAllBook() {
-		books.sort(new Comparator<Book>() {
-		
-			@Override
-			public int compare(Book b1, Book b2) {
-				return b1.getIsbn() - b2.getIsbn();
-			}
-		});
+	public ArrayList<Book> getAllBook() {		
 		return books;
 	}
 
@@ -123,14 +116,14 @@ public class BookManagerImpl implements BookManager {
 	}
 
 	@Override
-	public ArrayList<Book> magazineOfThisYearInfo() {
-		LocalDate now = LocalDate.now();
-		int nowYear = now.getDayOfYear();
-		ArrayList<Book> list = new ArrayList<>();
+	public ArrayList<Magazine> magazineOfThisYearInfo() {
+		int nowYear = Integer.valueOf(LocalDate.now().getYear());
+		//System.out.println(nowYear);
+		ArrayList<Magazine> list = new ArrayList<>();
 		
 		for (Book b : books) {
-			if (b instanceof Magazine && b.getPublishDate().getYear() == nowYear) {
-				list.add(b);
+			if (b instanceof Magazine && ((Magazine)b).getPublishDate().getYear() == nowYear) {
+				list.add((Magazine)b);
 			}
 		}
 		

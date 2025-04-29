@@ -3,6 +3,7 @@ package com.self.service;
 import java.util.ArrayList;
 
 import com.self.vo.Book;
+import com.self.vo.Magazine;
 
 public interface BookManager {
 	void insertBook(Book book);
@@ -16,5 +17,5 @@ public interface BookManager {
 	double getSumPriceOfBooks();
 	double getAvgPriceOfBooks();	
 	
-	ArrayList<Book> magazineOfThisYearInfo();
+	ArrayList<Magazine> magazineOfThisYearInfo();
 }

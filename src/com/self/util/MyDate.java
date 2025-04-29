@@ -34,5 +34,11 @@ public class MyDate {
 	public void changeDay(int day) {
 		this.day = day;
 	}
+
+	@Override
+	public String toString() {
+		return year + "-" + month + "-" + day;
+	}
+	
 	
 }
